@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#080808">
+  <title>For Adwiteya ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Custom cursor layer -->
+  <div id="cursor-layer" aria-hidden="true"></div>
+
+  <!-- Global background -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <div class="ambient-glow" aria-hidden="true"></div>
+
+
+  <!-- Heart meter -->
+  <div class="heart-meter" id="heart-meter" hidden>
+    <svg viewBox="0 0 100 100" class="heart-meter-svg">
+      <defs>
+        <clipPath id="heart-clip">
+          <path d="M50,88 C50,88 8,58 8,32 C8,18 18,8 32,8 C42,8 50,16 50,16 C50,16 58,8 68,8 C82,8 92,18 92,32 C92,58 50,88 50,88Z"/>
+        </clipPath>
+      </defs>
+      <path class="heart-meter-outline" d="M50,88 C50,88 8,58 8,32 C8,18 18,8 32,8 C42,8 50,16 50,16 C50,16 58,8 68,8 C82,8 92,18 92,32 C92,58 50,88 50,88Z"/>
+      <rect class="heart-meter-fill" id="heart-meter-fill" clip-path="url(#heart-clip)" x="0" y="100" width="100" height="0"/>
+    </svg>
+  </div>
+
+  <!-- SCENE 1: Opening -->
+  <section class="scene scene-opening active" id="scene-opening" data-scene="opening">
+    <div class="opening-glow"></div>
+    <div class="opening-star" id="opening-star">
+      <div class="star-core"></div>
+      <div class="star-rays"></div>
+    </div>
+    <div class="opening-text" id="opening-text"></div>
+  </section>
+
+  <!-- SCENE 2: Main Story -->
+  <section class="scene scene-story" id="scene-story" data-scene="story">
+    <div class="story-container">
+      <div class="story-line" id="story-line"></div>
+    </div>
+  </section>
+
+  <!-- SCENE 3: Reasons -->
+  <section class="scene scene-reasons" id="scene-reasons" data-scene="reasons">
+    <h2 class="scene-title">Reasons I Like You</h2>
+    <p class="scene-subtitle">Tap the bubbles to discover them ✨</p>
+    <div class="reasons-field" id="reasons-field"></div>
+    <button class="scene-continue" id="reasons-continue">Continue our story →</button>
+  </section>
+
+
+  <!-- SCENE 5: Envelope -->
+  <section class="scene scene-envelope" id="scene-envelope" data-scene="envelope">
+    <div class="envelope-wrapper" id="envelope-wrapper">
+      <div class="envelope" id="envelope">
+        <div class="envelope-back"></div>
+        <div class="envelope-letter" id="envelope-letter">
+          <div class="letter-content">
+            <p class="letter-dear">Dear Adwiteya,</p>
+            <p>I never really knew when it happened.</p>
+            <p>Maybe it was one conversation.</p>
+            <p>Maybe it was a hundred little moments.</p>
+            <p>But somewhere between all those laughs, random talks, and memories...</p>
+            <p class="letter-highlight">you became someone incredibly important to me.</p>
+            <p>And that's why I'm here today.</p>
+            <p>Because I don't want to keep wondering "what if?"</p>
+            <p>I'd rather tell you honestly how I feel.</p>
+            <p class="letter-sign">— Chanukya ❤️</p>
+          </div>
+        </div>
+        <div class="envelope-front"></div>
+        <div class="envelope-flap" id="envelope-flap"></div>
+        <div class="envelope-seal">❤️</div>
+      </div>
+      <p class="envelope-hint" id="envelope-hint">Tap the envelope to open</p>
+    </div>
+    <button class="scene-continue" id="envelope-continue" hidden>Continue →</button>
+  </section>
+
+  <!-- SCENE 6: Pre-Proposal -->
+  <section class="scene scene-pre-proposal" id="scene-pre-proposal" data-scene="pre-proposal">
+    <div class="pre-proposal-vignette"></div>
+    <div class="heartbeat-ring" id="heartbeat-ring"></div>
+    <div class="pre-proposal-text" id="pre-proposal-text"></div>
+  </section>
+
+  <!-- SCENE 7: Proposal -->
+  <section class="scene scene-proposal" id="scene-proposal" data-scene="proposal">
+    <div class="proposal-bg-heart" id="proposal-bg-heart"></div>
+    <div class="proposal-sparkles" id="proposal-sparkles"></div>
+    <div class="proposal-content">
+      <h1 class="proposal-name" id="proposal-name">Adwiteya</h1>
+      <p class="proposal-question" id="proposal-question">Will you be my girlfriend?</p>
+      <div class="proposal-buttons">
+        <button class="btn-yes" id="btn-yes">YES ❤️</button>
+        <button class="btn-no" id="btn-no">No</button>
+      </div>
+      <p class="no-message" id="no-message"></p>
+    </div>
+  </section>
+
+  <!-- SCENE 8: Celebration Transition -->
+  <section class="scene scene-celebration" id="scene-celebration" data-scene="celebration">
+    <canvas id="celebration-canvas"></canvas>
+    <div class="celebration-flash"></div>
+    <div class="celebration-heart-crack" id="celebration-heart"></div>
+  </section>
+
+  <!-- SCENE 9: Garden -->
+  <section class="scene scene-garden" id="scene-garden" data-scene="garden">
+    <canvas id="garden-canvas"></canvas>
+    <div class="garden-aurora"></div>
+    <div class="garden-messages" id="garden-messages"></div>
+    <div class="garden-lanterns" id="garden-lanterns"></div>
+    <div class="shooting-star" id="shooting-star" hidden>
+      <span class="shooting-star-text">Fun fact: the hardest part of making this website was waiting long enough to finally ask you. ❤️</span>
+    </div>
+  </section>
+
+  <!-- Overlay for transitions -->
+  <div class="scene-transition" id="scene-transition"></div>
+
+  <script src="js/particles.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/scenes.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
